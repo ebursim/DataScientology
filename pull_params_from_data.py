@@ -58,18 +58,18 @@ def pparam_from_match(dmr, match_data):
             W_WardCount += dmr['players'][i]['obs_placed']+dmr['players'][i]['sen_placed']
             W_CampStack += dmr['players'][i]['camps_stacked']
             W_Denies += dmr['players'][i]['denies']
-            W_THeroDmg += dmr['players'][i]['hero_damage']
-            W_THeroHeal += dmr['players'][i]['hero_healing']
-            W_RegItemUse += sum_regits(dmr['players'][i]['item_uses'])
+            W_THeroDmg += (dmr['players'][i]['hero_damage']/dmr['duration'])*60
+            W_THeroHeal += (dmr['players'][i]['hero_healing']/dmr['duration'])*60
+            W_RegItemUse += (sum_regits(dmr['players'][i]['item_uses'])/dmr['duration'])*60
             W_TLaneEff += dmr['players'][i]['lane_efficiency']
         if dmr['players'][i]['win'] == 0:
 #            L_APM += dmr['players'][i]['actions_per_min']
             L_WardCount += dmr['players'][i]['obs_placed']+dmr['players'][i]['sen_placed']
             L_CampStack += dmr['players'][i]['camps_stacked']
             L_Denies += dmr['players'][i]['denies']
-            L_THeroDmg += dmr['players'][i]['hero_damage']
-            L_THeroHeal += dmr['players'][i]['hero_healing']
-            L_RegItemUse += sum_regits(dmr['players'][i]['item_uses'])
+            L_THeroDmg += (dmr['players'][i]['hero_damage']/dmr['duration'])*60
+            L_THeroHeal += (dmr['players'][i]['hero_healing']/dmr['duration'])*60
+            L_RegItemUse += (sum_regits(dmr['players'][i]['item_uses'])/dmr['duration'])*60
             L_TLaneEff += dmr['players'][i]['lane_efficiency']
     
     wmd = pd.DataFrame([[ W_WardCount, W_CampStack, W_Denies, W_THeroDmg, W_THeroHeal, W_RegItemUse, W_TLaneEff, 1]], columns=['WardCount','CampStack','Denies','THeroDmg','THeroHeal','RegItemUse','TLaneEff', 'Win'])
