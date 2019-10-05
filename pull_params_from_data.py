@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
 import pandas as pd
 import requests as req
 import json
 import time
 
-N = 100
+N = 100 ## How many matches to pull
 r = req.get('https://api.opendota.com/api/explorer?sql=SELECT%20public_matches.match_id%20FROM%20public_matches%20WHERE%20public_matches.avg_mmr%20%3E%205500%20AND%20public_matches.lobby_type%20IN%20(5,6,7) AND public_matches.game_mode=22%20limit%20'+str(N)).text
 r = r.split('"rows"')[1]
 r = r.split(',"fields"')[0]
@@ -89,7 +84,7 @@ i = 0
 match_data = pd.DataFrame(columns=variable_list)
 
 while i < N:
-    time.sleep(2)
+    time.sleep(2) ## There is a maximum 60 query per minute limit. Hence the sleep in here.
     mr = req.get('https://api.opendota.com/api/matches/'+dset['matchID'][i]).text
     dmr = json.loads(mr)
     pdata = dmr['players']
@@ -108,5 +103,5 @@ while i < N:
         i+=1
     
 
-match_data.to_csv('dota_match_data')
+#match_data.to_csv('dota_match_data') ## To write to a file so we can deal with static data.
 
