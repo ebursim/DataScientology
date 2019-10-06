@@ -21,3 +21,6 @@ Intro to Data Science Project Work
 
 #Shall we look into hero wise winrate too? Might get a bit too complicated though.
 #
+
+Also, apparently the data is not that clean. There are many instances where the value of a parameter is NONE or it the key itself does not exist. It might be  due to privacy settings of the players, so they do not share certain stats but it still does not explain the selectiveness of stat existence.
+
