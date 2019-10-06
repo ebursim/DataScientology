@@ -89,7 +89,7 @@ while i < N:
     dmr = json.loads(mr)
     pdata = dmr['players']
     nullvaluecheck = []
-    for j in range(10):
+    for j in range(10): ##Reason for this checks are because I realized data is not that clean. There are many occasions where these values are NONE rather than 0.
         checklist = [pdata[j]['obs_placed'], pdata[j]['sen_placed'], pdata[j]['camps_stacked'], pdata[j]['denies'], pdata[j]['hero_damage'], pdata[j]['hero_healing'], sum_regits(pdata[j])]
         if all(x for x in checklist if x is None):
             nullvaluecheck.append(1)
