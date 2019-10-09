@@ -1,0 +1,12 @@
+Next Steps
+
+- We keep downloading the data(1GB already in, keeps working on Uula's machine)
+- We already have script that splits hero ids into binary variables
+- in TPOT we trust, probably on Burak's machine
+- Clean the players data and do the necessary transformations
+
+
+- Word clouds for general idea on winning and losing
+- A separate tab in the website for the prediction tool so people can enter their values and check their winning chance
+- Check if we can find average values for different ranks so we can show the difference for the winning averages on the website
+- Jst show the values in the order of importance towards winning
