@@ -5,10 +5,10 @@ Intro to Data Science Project Work
 #Example query to see how it is: https://api.opendota.com/api/explorer?sql=SELECT%20public_matches.match_id,public_matches.avg_mmr,%20public_matches.lobby_type,public_matches.lobby_type,public_matches.game_mode%20FROM%20public_matches%20WHERE%20public_matches.avg_mmr%20%3E%205000%20AND%20public_matches.lobby_type%20IN%20(5,6,7) AND public_matches.game_mode=22%20limit%20100\
 
 #
-# PARAMETERS \
+# PARAMETERS (updated)\
 #1) chatdata (wordcount) or take the words, wordcounts are python dictionary. How do we use wordclouds for this? 
     Maybe not predictor but just two wordclouds for win and lose situations. This is not in the code yet \
-#2) We try to obtain location coordinates on the map and the map size? Not in the code yet, could not find the map size for X,Y\
+#2) Total gold per minute \
 #3) number of wards placed \
 #4) camps stacked \
 #5) denies \
@@ -16,6 +16,10 @@ Intro to Data Science Project Work
 #7) sum of all hero healing per minute \
 #8) Regen item uses. Regen items: [tango, clarity, flask and enchanted_mango] use? \
 #9) Sum of all heroes lane efficiencies \
+#10) Total pings per minute \
+#11) Total kills per minute \
+#12) Total deaths per minute \
+#13) Total xp per minute \
 # 
 #Uses players[i]['win'] to select aggregate through above parameters. \
 
@@ -27,7 +31,6 @@ Also, apparently the data is not that clean. There are many instances where the 
 Parameters that we are using and how we are using them,
 
 minutes = float(dmr['duration']/60)
-#            W_APM += dmr['players'][i]['actions_per_min']
             W_WardCount += dmr['players'][i]['obs_placed']+dmr['players'][i]['sen_placed']
             W_CampStack += dmr['players'][i]['camps_stacked']
             W_Denies += dmr['players'][i]['denies']
