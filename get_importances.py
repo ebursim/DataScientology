@@ -14,5 +14,5 @@ best_model = tpot.fitted_pipeline_.steps[-1][1]
 best_model.fit(x, y)
 imp = best_model.feature_importances_
 imp_order = np.argsort(imp)
-for i in len(imp_order):
+for i in range(len(imp_order)):
     print(variable_list[imp_order[i]], imp[imp_order[i]])
