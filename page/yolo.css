@@ -1,0 +1,46 @@
+body {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+#won-block {
+    display: flex
+}
+
+#lost-block {
+    display: flex
+}
+
+#feature-block {
+    display: flex
+}
+
+#won-words {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+#lost-words {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+#feature-chart {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+section {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+#logo {
+    width: 50%;
+    margin-left: -75px;
+}
