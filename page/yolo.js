@@ -17,7 +17,7 @@ WordCloud(document.getElementById('lost-words'), { list: lost_words } );
 
 const data = {
     datasets: [{
-        data: [0.009119640947589129, 0.0092154322737091, 0.009329297451895726, 0.01902290849715715, 0.020832820506978305, 0.02178945955717607, 0.022259204013228496, 0.027262308164348784, 0.07623407382993601, 0.2418226767333847, 0.2618142199348184, 0.2812979580897781],
+        data: [0.0091, 0.0092, 0.0093, 0.0190, 0.0208, 0.0217, 0.0222, 0.0272, 0.0762, 0.2418, 0.2618, 0.2812],
         borderColor: [
             "#B44335",
             "#B44335",
@@ -54,7 +54,7 @@ const data = {
         "Healing per minute",
         "Denies per minute",
         "Lane efficiency",
-        "Regen. item use",
+        "Regen. item use per minute",
         "Hero damage per minute",
         "XP per minute",
         "Kills per minute",
@@ -64,18 +64,18 @@ const data = {
 };
 
 const labels = {
-    0: "Pings are the primary non-verbal communication method with your team mates.",
-    1: "Wards grant you vision of the map for a fixed duration.",
-    2: "Neutral monsters?",
-    3: "Healing restores lost health.",
-    4: "Some Dota garbage.",
-    5: "No idea.",
-    6: "Same as healing.",
-    7: "Damage is cool.",
-    8: "So is experience.",
-    9: "Killing isn't.",
-    10: "But dying is.",
-    11: "Everyone likes gold.",
+    0: "Since you can warn or suggest something to your teammates without losing control due to writing, it is a very efficient form of communication. Might seem trivial, but it is as important as warding and stacking!",
+    1: "Wards grant you vision of the map for a fixed duration as well as taking the enemy vision down. This will help you to avoid unwanted combats, ganks and be better at ganks, team combats and help you farm more safely (thus efficiently).",
+    2: "Stacking camps is a really easy way to double the gain from a neutral camp, that you can keep in mind while rotating in the map. The analysis shows it about equally important as warding/dewarding. Meaning that, supporting is not about wards only, it is essentially enabling your cores.",
+    3: "Healing items and heroes that has healing skills can have big impact in the fights. As we see in the analysis, it is very close to denying creeps in the importance order. Get that meka up for your team!",
+    4: "By denying creeps in the lane, you essentially take the enemy's gold away along with %60 of the experience! On top of all that, you will gain 20% of the gold for yourself! So try to deny creeps, regardless of the role. That little bit of gold can help you out when you are playing hard support. Especially when we see that denying is about equally importance as overall lane efficiency!",
+    5: "As we see from the distribution of the importance, being efficient in lane is very important! You should practice on last hitting, lane control, aggro control, denies and farming patterns while still not missing creeps from the lane. It is almost as important as hero damage per minute, which should tell you that it is not always the best to help out the team for every single fight you see! ",
+    6: "This is one of the things that looks small but has a huge impact, about the same as lane efficiency and very close to damaging enemy heroes. You should avoid walking back to base as you will lose so much xp and gold doing that. Buy salves, tangoes, clarities, mangos to be able to contest your lane and keep farming! If you are low on mana, don't run to base every single time. Buy clarities, it will help you more than you think!",
+    7: "Damaging enemy heroes can help you create space, prepare for a kill or a push. If you are a support, don't sit behind your cores and keep harrassing the enemy as your goal should be keeping him out of the lane. Make him burn through his regen items. If you are a core, harrassing the enemy hero can help you dominate the lane. They will be less prone to get last hits and if they try you might even have a kill potential!",
+    8: "As you might have guessed, experience per minute is the 4th most important factor towards winning. So focus on trying to salvage as much experience as you can from the map.",
+    9: "Kills per minute is obviously very important but the it might come to your surprise that deaths and kills are almost equally important. So do not try to die to get a kill whenever you see the opportunity. It is as important for you to not to die, as it is to get kills!",
+    10: "Not dying is the second most important aspect to win more games, as the data shows. If you are playing support, try to position yourself in combats so that you can throw your skills and stay alive as long as possible. Thus you will be enabling your cores and providing as much as possible, which will return as more wins! If you are a core player, be mindful of the kills you are chasing and heroes you are initiating. Don't die to get just any kill, be mindful and selective about it!",
+    11: "It is expected to see this variable on top of the list. Practice on using the map to the fullest. Don't let lanes be empty and not utilized. You should be pushing the lanes, which will give you gold and also make your jungle safer which in return gives enables even more farm!! Watch how pro players use the map to farm and get the most out of it!",
 }
 
 var myPieChart = new Chart(document.getElementById('feature-chart').getContext('2d'), {
