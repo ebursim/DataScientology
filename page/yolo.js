@@ -4245,14 +4245,14 @@ const data = {
       "#b0c3d9",
     ]
   }],
-  labels: [
+   labels: [
     'Pings per minute',
     'Wards per minute',
     'Camp stacks per minute',
     "Healing per minute",
     "Denies per minute",
     "Lane efficiency",
-    "Regen. item use",
+    "Regen. item use per minute",
     "Hero damage per minute",
     "XP per minute",
     "Kills per minute",
@@ -4264,16 +4264,16 @@ const data = {
 const labels = {
   0: "Pings are the primary non-verbal communication method with your team mates.",
   1: "Wards grant you vision of the map for a fixed duration.",
-  2: "Neutral monsters?",
-  3: "Healing restores lost health.",
-  4: "Some Dota garbage.",
-  5: "No idea.",
-  6: "Same as healing.",
-  7: "Damage is cool.",
-  8: "So is experience.",
-  9: "Killing isn't.",
-  10: "But dying is.",
-  11: "Everyone likes gold.",
+  2: "Stacking neutral creep camps",
+  3: "Healing items and skills",
+  4: "Denying enemy lane creeps",
+  5: "Using the laning stage to the fullest",
+  6: "Consumable regeneration items; tango, clarity, salve..",
+  7: "Damage given to the enemy heroes",
+  8: "Gaining experience through creeps and kills",
+  9: "Getting hero kills",
+  10: "Dying to enemy heroes/towers/creeps",
+  11: "Gold gain through creeps, building kills and hero kills",
 }
 
 var myPieChart = new Chart(document.getElementById('feature-chart').getContext('2d'), {
