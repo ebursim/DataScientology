@@ -14,6 +14,10 @@ body {
     display: flex
 }
 
+.alert {
+    display: none;
+}
+
 #won-words {
     width: 75%;
     margin: auto;
