@@ -1,13 +1,16 @@
 import pickle
 from flask import Flask
 from flask import request
+from flask_cors import CORS
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def hello_world():
     pipeline = pickle.load(open("pipeline", "rb"))
-    return str(int(pipeline.predict([[x % 2 for x in range (0, 236)]])[0]))
+    return str(pipeline.predict([request.json])[0])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    CORS(app)
+    app.config['CORS_HEADERS'] = 'Content-Type'
+    app.run()
