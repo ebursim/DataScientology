@@ -1,43 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.css">
-    <link rel="stylesheet" href="yolo.css"/>
+    <link rel="stylesheet" href="yolo.css" />
     <title>Get Gud Kid</title>
-  </head>
-  <body style="background: #000000;">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Get Gud Kid</a>
-              </nav>
+</head>
+
+<body style="background: #000000;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Get Gud Kid</a>
+    </nav>
 
     <div id="content" class="container" style="color: white;">
 
-            <img src="dota2.jpg" id="logo"/>
+        <img src="dota2.jpg" id="logo" />
 
-            <section>
+        <section>
             <h2>
                 Preface
             </h2>
-            
+
             <div>
-                Dota 2 is a multiplayer online battle arena video game (MOBA). MOBA is an extremely popular genre which spans across numerous widely played titles. It's also a very competitive format. This makes it attractive from a financial perspective, as tournament prize pools are large and numerous betting sites offer opportunities for quick monetary gains. As is the case for any profitable endeavour, helping the aspirants to achieve their goals can also be very lucrative. Thus we present our analysis of the most important factors of winning a game of Dota 2. This information is useful for both the players and anyone interested to predict match results.
+                Dota 2 is a multiplayer online battle arena video game (MOBA). MOBA is an extremely popular genre which
+                spans across numerous widely played titles. It's also a very competitive format. This makes it
+                attractive from a financial perspective, as tournament prize pools are large and numerous betting sites
+                offer opportunities for quick monetary gains. As is the case for any profitable endeavour, helping the
+                aspirants to achieve their goals can also be very lucrative. Thus we present our analysis of the most
+                important factors of winning a game of Dota 2. This information is useful for both the players and
+                anyone interested to predict match results.
             </div>
-            </section>
+        </section>
 
 
         <section>
             <h2>
                 Game
             </h2>
-            
+
             <div>
-                Players have the possibility of using an in-game chat function during their games. Dota 2 also includes a voice chat option, but that is left out in this analysis due to the technical difficulty. Chat messages can be sent either just to the players of your own team or to everyone. We were interested to find out whether the nature of your chat messages would reflect the result of the matches. Note to the reader: being negative during the game is generally defined as toxicity (or being toxic).
+                Players have the possibility of using an in-game chat function during their games. Dota 2 also includes
+                a voice chat option, but that is left out in this analysis due to the technical difficulty. Chat
+                messages can be sent either just to the players of your own team or to everyone. We were interested to
+                find out whether the nature of your chat messages would reflect the result of the matches. Note to the
+                reader: being negative during the game is generally defined as toxicity (or being toxic).
             </div>
         </section>
 
@@ -45,15 +58,16 @@
             <h2>
                 Won games
             </h2>
-            
+
             <div>
-                Following image is a word cloud graph drawn from the most common words said by the winning teams. While some negative phrases admittedly do exist, the common theme is rather positive.
+                Following image is a word cloud graph drawn from the most common words said by the winning teams. While
+                some negative phrases admittedly do exist, the common theme is rather positive.
             </div>
         </section>
 
-            <div id="won-block">
-                    <canvas id="won-words"></canvas>
-            </div>
+        <div id="won-block">
+            <canvas id="won-words"></canvas>
+        </div>
 
         <section>
             <h2>
@@ -61,36 +75,135 @@
             </h2>
 
             <div>
-                Word cloud graph of the lost games draws a very different picture. Notably prevalent is the word report. This refers to the reporting functionality which is present in the game. You can report players to the game developer company in case they have behaved in either toxic manner, not been playing or have cheated. Often players in the losing teams want to report their own team members for not performing up to the reporting player's standards.
+                Word cloud graph of the lost games draws a very different picture. Notably prevalent is the word report.
+                This refers to the reporting functionality which is present in the game. You can report players to the
+                game developer company in case they have behaved in either toxic manner, not been playing or have
+                cheated. Often players in the losing teams want to report their own team members for not performing up
+                to the reporting player's standards.
             </div>
         </section>
 
-            <div id="lost-block">
-                    <canvas id="lost-words"></canvas>
-            </div>
-    
+        <div id="lost-block">
+            <canvas id="lost-words"></canvas>
+        </div>
+
         <section>
             <h2>
                 Feature importance
             </h2>
 
             <div>
-                The following graph displays the most significant factors affecting the probability to win a high level game of Dota 2.  
+                The following graph displays the most significant factors affecting the probability to win a high level
+                game of Dota 2.
             </div>
         </section>
 
-            <div id="feature-block">
-                <canvas id="feature-chart"></canvas>
+        <div id="feature-block">
+            <canvas id="feature-chart"></canvas>
+        </div>
+
+        <section>
+            <h2>
+                Match prediction
+            </h2>
+
+            <div>
+                We built a prediction model for estimating the results of matches based on team compositions.
             </div>
+        </section>
+
+        <form>
+            <div class="form-group">
+                <label for="r1">Radiant hero 1</label>
+                <select id="r1" class="form-control radiant-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="r2">Radiant hero 2</label>
+                <select id="r2" class="form-control radiant-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="r3">Radiant hero 3</label>
+                <select id="r3" class="form-control radiant-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="r4">Radiant hero 4</label>
+                <select id="r4" class="form-control radiant-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="r5">Radiant hero 5</label>
+                <select id="r5" class="form-control radiant-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="d1">Dire hero 1</label>
+                <select id="d1" class="form-control dire-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="d2">Dire hero 2</label>
+                <select id="d2" class="form-control dire-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="d3">Dire hero 3</label>
+                <select id="d3" class="form-control dire-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="d4">Dire hero 4</label>
+                <select id="d4" class="form-control dire-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="d5">Dire hero 5</label>
+                <select id="d5" class="form-control dire-predict-select" onchange="handleSelectChange(this)">
+                    <!-- <option selected>Choose...</option>
+                    <option>...</option> -->
+                </select>
+            </div>
+        </form>
+
+        <div class="alert alert-success" id="rad-win-alert" role="alert">Radiant is predicted to win..</div>
+
+        <div class="alert alert-danger" id="dire-win-alert" role="alert">The Dire is predicted to win.</div>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="wordcloud2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <script src="yolo.js"></script>
-  </body>
+</body>
+
 </html>
